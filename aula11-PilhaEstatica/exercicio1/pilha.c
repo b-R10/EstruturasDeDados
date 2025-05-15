@@ -31,17 +31,16 @@ void inverterPalavras(char *entrada, char *saida, Pilha *p) {
 
   while ((c = entrada[i]) != '\0') {
     if( !isspace(c) ) {
-      PUSH(p, c);  // empilha as letras da palavra
+      PUSH(p, c);  
     } else {
       while (!isVazia(p)) {
-        saida[j++] = POP(p); // desempilha invertendo
+        saida[j++] = POP(p); 
       }
-      saida[j++] = c; // add espaco
+      saida[j++] = c;
     }
     i++;
   }
 
-  // desempilha a ultima palavra (caso nao tenha espaco no final)
   while (!isVazia(p)) {
     saida[j++] = POP(p);
     saida[j] = '\0';
